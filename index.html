@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>UrbanTrends</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css"/>
+  </head>
+  <body>
+    <header>
+      <p>Get the best deals on all the latest shoe trends. Call +254799257050</p>
+    </header>
+    <p class="opener">stay ahead with the top trends right here on urban trends...</p>
+    <div class="starter">
+        <h1 class="app-name"><i class="fa-solid fa-shoe-prints"></i>...Urban Trends</h1>
+        <nav>
+          <button class="cart-button" id="cart-button"><i class="fa-solid fa-cart-shopping"></i>Cart</button>
+          <button class="user-button" id="user-button"><i class="fa-solid fa-circle-user"></i>Sign Up</button>
+        </nav>
+    </div>
+    <div id="cart-modal" class="cart-modal">
+      <div class="cartmodal-content">
+          <span class="close-cart" id="close-cart">&times;</span>
+          <h2>Your Cart</h2>
+          <button id="clear-cart-button">Clear Cart</button>
+          <div class="cart-items" id="cart-items"></div>
+          <p>Total: KSH<span id="total-price">0.00</span></p>
+          <button id="checkout-button">Checkout</button>
+      </div>
+    </div>
+    <div id="popup" class="popup">
+      <div class="popup-content">
+        <span class="close-popup" id="close-popup">&times;</span>
+        <h2>Sign Up</h2>
+        <form id="signup-form">
+          <div class="form-group">
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" name="fullname" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+          </div>
+          <button type="submit" class="signup-button">Sign Up</button>
+        </form>
+      </div>
+    </div>  
+    <section class="landing">
+      <div class="left-box"><h3>My Orders</h3>
+        <div class="orders-box"></div>
+        <button class="received-button">Received</button>
+      </div>
+      <div class="center-box">
+        <h1>Welcome To Our Online Store !</h1>
+      </div>
+      <div class="content-container">
+        <div class="content-box" id="content-box1">
+          <p id="open-inventory-popup">View Our Entire Inventory</p>
+        </div>
+        <div class="content-box" id="content-box2">
+          <p id="open-rate-review-modal">Rate & Review your Experience</p>
+        </div>
+      </div>
+      <div id="inventory-popup" class="hidden">
+        <div class="popup-content">
+          <span class="close-button" id="close-inventory-popup">&times;</span>
+          <h3>Shop's Inventory</h3>
+          <ul id="inventory-list">
+            <li><b>Air Jordan 1's</b></li>
+            <li><b>Air Jordan 4's</b></li>
+            <li><b>Air Jordan 6's</b></li>
+            <li><b>Air Force 1's</b></li>
+            <li><b>Alexander Mcqueens</b></li>
+            <li><b>Football Cleets</b></li>
+            <li><b>Women's Boots</b></li>
+            <li><b>Mary Janes</b></li>
+            <li><b>Trainers</b></li>
+            <li><b>Dress Shoes</b></li>
+            <li><b>Classic Vans</b></li>
+            <li><b>Classic Converse</b></li>
+            <li><b>Crocs</b></li>
+            <li><b>Sandals</b></li>
+            <li><b>Platform Heels</b></li>
+            <li><b>Skate Shoes</b></li>
+          </ul>
+        </div>
+      </div>
+      <div id="rate-review-modal" class="rate-review-modal">
+        <div class="rate-review-modal-content">
+          <span id="close-rate-review-button" class="close-rate-review-button">&times;</span>
+          <div class="rate-review-ratings-and-review-section">
+            <h3>Ratings and Reviews:</h3>
+            <div id="ratings-and-reviews"></div>
+          </div>
+          <div class="rate-review-ratings-section">
+            <h3>Rate your experience:</h3>
+            <div class="rate-review-stars" id="star-rating">
+              <span class="rate-review-star" data-rating="1">☆</span>
+              <span class="rate-review-star" data-rating="2">☆</span>
+              <span class="rate-review-star" data-rating="3">☆</span>
+              <span class="rate-review-star" data-rating="4">☆</span>
+              <span class="rate-review-star" data-rating="5">☆</span>
+            </div>
+          </div>
+          <div class="rate-review-write-review-section">
+            <h3>Write a review:</h3>
+            <textarea id="review-text" rows="4" placeholder="Write your review here..."></textarea>
+          </div>
+          <button id="submit-review">Submit</button>
+        </div>
+      </div>
+    </section>
+    <br>
+    <section>
+      <h1 class="shouter">Check Out The All Latest Trends !</h1>
+      <div class="items">
+        <div class="item-box">
+          <div class="shoe-image-container">
+            <img id="shoe-image" class="shoe-image" src="https://sneakernews.com/wp-content/uploads/2022/10/air-jordan-1-hi-85-black-white-BQ4422-001-7.jpg" alt="Shoe 1">
+          </div>
+          <div class="shoe-details">
+            <div id="shoe-name" class="shoe-name"><h1>Air Jordan 1</h1></div>
+            <div id="shoe-price" class="shoe-price">KSH 2000</div>
+            <button id="view-button" class="view-button">View</button>
+          </div>
+        </div>
+        <div class="item-box">
+          <div class="shoe-image-container">
+            <img id="shoe-image" class="shoe-image" src="https://kickskenya.com/cdn/shop/products/Blackcat2.jpg?v=1665649560" alt="Shoe 1">
+          </div>
+          <div class="shoe-details">
+            <div id="shoe-name" class="shoe-name"><h1>Air Jordan 4</h1></div>
+            <div id="shoe-price" class="shoe-price">KSH 2000</div>
+            <button id="view-button" class="view-button">View</button>
+          </div>
+        </div>
+        <div class="item-box">
+          <div class="shoe-image-container">
+            <img id="shoe-image" class="shoe-image" src="https://sneakernews.com/wp-content/uploads/2022/10/Air-Jordan-6-Black-Chrome-DX2836-001-2.jpg" alt="Shoe 1">
+          </div>
+          <div class="shoe-details">
+            <div id="shoe-name" class="shoe-name"><h1>Air Jordan 6</h1></div>
+            <div id="shoe-price" class="shoe-price">KSH 1000</div>
+            <button id="view-button" class="view-button">View</button>
+          </div>
+        </div>
+        <div class="item-box">
+          <div class="shoe-image-container">
+            <img id="shoe-image" class="shoe-image" src="https://images.offerup.com/5qMjShU6LleAEZXOwkebGKNqfS4=/1140x800/33ce/33ce87e791a346f486dcfa5d1e1bd89b.jpg" alt="Shoe 1">
+          </div>
+          <div class="shoe-details">
+            <div id="shoe-name" class="shoe-name"><h1>Air Force 1</h1></div>
+            <div id="shoe-price" class="shoe-price">KSH 3000</div>
+            <button id="view-button" class="view-button">View</button>
+          </div>
+        </div>
+        <div class="item-box">
+          <div class="shoe-image-container">
+            <img id="shoe-image" class="shoe-image" src="https://www.crepselect.co.uk/cdn/shop/products/image_217e7c93-a034-490e-b3f1-84c5df85010a_1024x1024.jpg?v=1612372009" alt="Shoe 1">
+          </div>
+          <div class="shoe-details">
+            <div id="shoe-name" class="shoe-name"><h1>Alexander Mcqueen</h1></div>
+            <div id="shoe-price" class="shoe-price">KSH 4000</div>
+            <button id="view-button" class="view-button">View</button>
+          </div>
+        </div>
+        <div class="item-box">
+          <div class="shoe-image-container">
+            <img id="shoe-image" class="shoe-image" src="https://m.media-amazon.com/images/I/71T-aNEFGtL._AC_UY580_.jpg" alt="Shoe 1">
+          </div>
+          <div class="shoe-details">
+            <div id="shoe-name" class="shoe-name"><h1>Football Cleets</h1></div>
+            <div id="shoe-price" class="shoe-price">KSH 2500</div>
+            <button id="view-button" class="view-button">View</button>
+          </div>
+        </div>
+        <div class="item-box">
+          <div class="shoe-image-container">
+            <img id="shoe-image" class="shoe-image" src="https://ke.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/75/069026/4.jpg?6905" alt="Shoe 1">
+          </div>
+          <div class="shoe-details">
+            <div id="shoe-name" class="shoe-name"><h1>Women's Boots</h1></div>
+            <div id="shoe-price" class="shoe-price">KSH 2700</div>
+            <button id="view-button" class="view-button">View</button>
+          </div>
+        </div>
+        <div class="item-box">
+          <div class="shoe-image-container">
+            <img id="shoe-image" class="shoe-image" src="https://m.media-amazon.com/images/I/5173GB+n1UL._AC_UY1000_.jpg" alt="Shoe 1">
+          </div>
+          <div class="shoe-details">
+            <div id="shoe-name" class="shoe-name"><h1>Mary Janes</h1></div>
+            <div id="shoe-price" class="shoe-price">KSH 1700</div>
+            <button id="view-button" class="view-button">View</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <button id="show-more-button">Show More</button>
+    <section class="item-boxes hidden">
+      <div class="items">
+        <div class="item-box">
+          <div class="shoe-image-container">
+            <img id="shoe-image" class="shoe-image" src="https://5.imimg.com/data5/ZV/OV/QG/SELLER-14290347/whatsapp-image-2020-06-14-at-10-53-35-am.jpeg" alt="Shoe 1">
+          </div>
+          <div class="shoe-details">
+            <div id="shoe-name" class="shoe-name"><h1>Trainers</h1></div>
+            <div id="shoe-price" class="shoe-price">KSH 2000</div>
+            <button id="view-button" class="view-button">View</button>
+          </div>
+        </div>
+        <div class="item-box">
+          <div class="shoe-image-container">
+            <img id="shoe-image" class="shoe-image" src="https://cdn.shopify.com/s/files/1/2337/7003/products/3_bccb99cd-3fc7-47a1-b8a6-44c2ad79e0ad.jpg?v=1667300298&width=450" alt="Shoe 1">
+          </div>
+          <div class="shoe-details">
+            <div id="shoe-name" class="shoe-name"><h1>Dress Shoes</h1></div>
+            <div id="shoe-price" class="shoe-price">KSH 1500</div>
+            <button id="view-button" class="view-button">View</button>
+          </div>
+        </div>
+        <div class="item-box">
+          <div class="shoe-image-container">
+            <img id="shoe-image" class="shoe-image" src="https://images.vans.com/is/image/VansEU/VN000D3HY28-HERO?$PDP-FULL-IMAGE$" alt="Shoe 1">
+          </div>
+          <div class="shoe-details">
+            <div id="shoe-name" class="shoe-name"><h1>Classic Vans</h1></div>
+            <div id="shoe-price" class="shoe-price">KSH 1000</div>
+            <button id="view-button" class="view-button">View</button>
+          </div>
+        </div>
+        <div class="item-box">
+          <div class="shoe-image-container">
+            <img id="shoe-image" class="shoe-image" src="https://i.ebayimg.com/images/g/Mr8AAOSwZgRgbvEE/s-l1200.webp" alt="Shoe 1">
+          </div>
+          <div class="shoe-details">
+            <div id="shoe-name" class="shoe-name"><h1>Classic Converse</h1></div>
+            <div id="shoe-price" class="shoe-price">KSH 3000</div>
+            <button id="view-button" class="view-button">View</button>
+          </div>
+        </div>
+        <div class="item-box">
+          <div class="shoe-image-container">
+            <img id="shoe-image" class="shoe-image" src="https://i.ebayimg.com/images/g/nLcAAOSw05JkSekC/s-l1200.webp" alt="Shoe 1">
+          </div>
+          <div class="shoe-details">
+            <div id="shoe-name" class="shoe-name"><h1>Crocs</h1></div>
+            <div id="shoe-price" class="shoe-price">KSH 4000</div>
+            <button id="view-button" class="view-button">View</button>
+          </div>
+        </div>
+        <div class="item-box">
+          <div class="shoe-image-container">
+            <img id="shoe-image" class="shoe-image" src="https://di2ponv0v5otw.cloudfront.net/posts/2021/06/30/60dc985a12d880948f63533e/m_60dc987918013674df76330a.jpg" alt="Shoe 1">
+          </div>
+          <div class="shoe-details">
+            <div id="shoe-name" class="shoe-name"><h1>Sandals</h1></div>
+            <div id="shoe-price" class="shoe-price">KSH 2500</div>
+            <button id="view-button" class="view-button">View</button>
+          </div>
+        </div>
+        <div class="item-box">
+          <div class="shoe-image-container">
+            <img id="shoe-image" class="shoe-image" src="https://i.ebayimg.com/images/g/CYgAAOSws4Rh3Se5/s-l1200.jpg" alt="Shoe 1">
+          </div>
+          <div class="shoe-details">
+            <div id="shoe-name" class="shoe-name"><h1>Platform Heels</h1></div>
+            <div id="shoe-price" class="shoe-price">KSH 2700</div>
+            <button id="view-button" class="view-button">View</button>
+          </div>
+        </div>
+        <div class="item-box">
+          <div class="shoe-image-container">
+            <img id="shoe-image" class="shoe-image" src="https://image.made-in-china.com/202f0j00lNdhSUpBftcq/Outdoor-Sports-Roller-Skates-Wheels-Men-Inline-Roller-Skating-Shoes.webp" alt="Shoe 1">
+          </div>
+          <div class="shoe-details">
+            <div id="shoe-name" class="shoe-name"><h1>Skate shoes</h1></div>
+            <div id="shoe-price" class="shoe-price">KSH 1700</div>
+            <button id="view-button" class="view-button">View</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="chat-button" id="chat-button">
+        <i class="fas fa-comment"></i> Chat
+    </div>
+    <div id="chat-modal" class="chat-modal">
+      <div class="chatmodal-content">
+        <span class="close-chat" id="close-chat">&times;</span>
+        <h2>Talk to Customer Care</h2>
+        <div class="chat-area" id="chat-area"></div>
+        <input type="text" id="user-message" placeholder="Type your message">
+        <button id="submit-message">Submit</button>
+      </div>
+    </div>
+    <div id="shoeModal" class="modal">
+      <div class="modal-content">
+        <div class="shoe-details-modal">
+          <div><img id="modal-shoe-image" class="shoe-image-modal" src="" alt="Shoe Image"></div>
+          <div class="shoe-info">
+            <h1 id="modal-shoe-name">Shoe Name</h1>
+            <p id="modal-shoe-price">Price</p>
+            <div class="size-selection">
+              <label for="size">Size:</label>
+              <select id="size" name="size">
+                <option value="37">37</option>
+                <option value="38">38</option>
+                <option value="39">39</option>
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
+                <option value="43">43</option>
+                <option value="44">44</option>
+              </select>
+            </div>
+            <div class="color-selection">
+              <label for="color">Color:</label>
+              <select id="color" name="color">
+                <option value="black">Black</option>
+                <option value="white">White</option>
+                <option value="blue">Blue</option>
+                <option value="red">Red</optio>
+              </select>
+            </div>
+            <div class="quantity-selection">
+              <label for="quantity">Quantity:</label>
+              <div class="quantity"><input type="number" id="quantity" name="quantity" min="1" value="1"></div>
+            </div>
+            <button id="addToCartButton">Add to Cart</button>
+          </div>
+       </div>
+      </div>
+    </div>
+    <div id="checkout-modal" class="checkout-modal">
+      <div class="checkout-modal-content">
+        <h2>Checkout</h2>
+        <div id="checkout-items"></div>
+        <p>Total: KSH <span id="checkout-total">0.00</span></p>
+        <label for="delivery-location">Delivery Location:</label>
+        <input type="text" id="delivery-location">
+        <label for="phone-number">Phone Number:</label>
+        <input type="text" id="phone-number">
+        <button id="place-order-button">Place Order</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

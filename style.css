@@ -1,0 +1,745 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    margin: 0;
+    text-align: center;
+    background-color: gray;
+}
+
+header{
+    background-color: bisque;
+    display: flex;
+    height: 40px;
+    padding: 5px 10px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: cursive;
+    align-items: center;
+}
+
+.opener {
+    font-weight: bold;
+    font-family: cursive;
+}
+.starter {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: white;
+    width: 100%;
+    height: 60px;
+    margin-bottom: 20px;
+    z-index: 100;
+}
+
+.app-name {
+    color: crimson;
+    font-family: cursive;
+    font-size: 25px;
+}
+
+.cart-button {
+    background-color: white;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: cursive;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.cart-button:hover {
+    color: red;
+}
+
+.cart-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 200;
+}
+
+.cartmodal-content {
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-family: cursive;
+    font-weight: bold;
+    height: 400px;
+    width: 400px;
+}
+
+#clear-cart-button {
+    background-color: white;
+    color: black;
+    font-family: cursive;
+    font-weight: bold;
+    margin: 5px;
+    padding: 2px 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#clear-cart-button:hover {
+    background-color: darkred;
+    color: white;
+}
+
+.close-cart {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.cart-items {
+    height: 150px;
+    width: 100%;
+    overflow-y: scroll;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+#checkout-button {
+    background-color: gray;
+    color: black;
+    font-family: cursive;
+    font-weight: bold;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#checkout-button:hover {
+    background-color: black;
+    color: white;
+}
+
+.user-button {
+    background-color: white;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: cursive;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.user-button:hover {
+    color: red;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 200;
+}
+
+.popup-content {
+    background: #fff;
+    font-family: cursive;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.close-popup {
+    position: absolute;
+    font-size: 24px;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+h2 {
+    text-align: center;
+    font-weight: bold;
+}
+  
+.form-group {
+    margin: 10px 0;
+}
+  
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+  
+.signup-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: gray;
+    color: black;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.signup-button:hover {
+    background-color: black;
+    color: white;
+}
+
+.landing {
+    display: flex;
+    float: left;
+    margin-bottom: 50px;
+}
+
+.left-box {
+    background-color: bisque;
+    color: black;
+    font-size: 18px;
+    font-family: cursive;
+    font-weight: bold;
+    max-height: 430px;
+    height: 430px;
+    width: 250px;
+    margin: 15px;
+    margin-right: 5px;
+    border-radius: 10px;
+}
+
+.orders-box {
+    background-color: white;
+    color: black;
+    font-size: 15px;
+    font-family: cursive;
+    max-height: 300px;
+    height: 300px;
+    width: 230px;
+    margin-right: 10px;
+    margin-left: 10px;
+    border: 1px solid black;
+    overflow-y: scroll;
+}
+
+.received-button {
+    background-color: darkgray;
+    color: black;
+    font-size: 18px;
+    font-family: cursive;
+    font-weight: bold;
+    padding: 5px 50px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.received-button:hover {
+    background-color: black;
+    color: white;
+}
+
+.center-box {
+    background-image: url(https://c0.wallpaperflare.com/preview/1001/454/569/unpaired-red-air-jordan-1-shoe.jpg);
+    background-size: cover;
+    background-position: center;
+    color: black;
+    font-family: cursive;
+    height: 420px;
+    width: 690px;
+    margin: 15px;
+    margin-right: 5px;
+    border-radius: 10px;
+}
+
+.content-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+    margin: 15px;
+}
+    
+.content-box {
+    background-color: darkgray;
+    color: bisque;
+    height: 205px;
+    width: 250px;
+    border-radius: 10px;
+}
+
+#content-box1 {
+    background-image: url(https://wallpapers.com/images/hd/red-jordan-shoes-08whk07f1ssfxuiw.jpg);
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color: black;
+    font-size: 18px;
+    font-family: cursive;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#content-box1:hover {
+    color: darkviolet;
+}
+
+#inventory-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 200;
+}
+  
+.popup-content {
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    height: 500px;
+    width: 300px;
+}
+  
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+  
+#inventory-list {
+    list-style: none;
+    padding: 0;
+    font-size: 18px;
+    color: blue;
+}
+  
+#content-box2 {
+    background-image: url(https://img.freepik.com/premium-photo/golden-correct-sign-with-five-stars-inside-message-box-best-quality-assurance-guarantee-product-iso-service-concept-by-3d-render_50039-3733.jpg);
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color: black;
+    font-size: 18px;
+    font-family: cursive;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#content-box2:hover {
+    color: darkviolet;
+}
+
+.rate-review-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 200;
+}
+
+.rate-review-modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    font-family: cursive;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 20px;
+    width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.close-rate-review-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.rate-review-ratings-and-review-section {
+    margin-top: 5px;
+}
+
+#ratings-and-reviews {
+    border: 1px solid black;
+    height: 100px;
+    width: 350px;
+    max-height: 200px;
+    max-width: 350px;
+    overflow-y: scroll;
+}
+
+.rate-review-stars {
+    font-size: 30px;
+}
+
+.rate-review-star {
+    cursor: pointer;
+}
+
+.rate-review-star:hover {
+    color: gold;
+}
+
+#review-text {
+    width: 350px;
+    max-height: 100px;
+    max-width: 350px;
+}
+
+#submit-review {
+    background-color: darkgray;
+    color: black;
+    font-family: cursive;
+    font-weight: bold;
+    padding: 10px 50px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#submit-review:hover {
+    background-color: black;
+    color: white;
+}
+
+.shouter {
+    color: black;
+    font-size: 36px;
+    font-family: cursive;
+    font-weight: bold;
+}
+.items {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin: 10px;
+}
+
+.item-box {
+    background-color: pink;
+    color: bisque;
+    height: 355px;
+    width: 300px;
+    border: 1px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.shoe-image-container {
+    max-height: 200px;
+    overflow: hidden;
+    display: flex;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.shoe-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.shoe-details {
+    font-family: cursive;
+    font-weight: bold;
+}
+
+.shoe-name {
+    font-weight: bold;
+    color: black;
+
+}
+
+.shoe-price {
+    color: darkred; 
+    font-size: 18px;
+}
+
+.view-button {
+    background-color: darkgray; 
+    color: black;
+    font-family: cursive;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 10px 50px;
+    cursor: pointer;
+}
+
+.view-button:hover {
+    background-color: black;
+    color: white;
+}
+
+#show-more-button {
+    padding: 10px 150px;
+    background-color: white; 
+    font-family: cursive;
+    font-size: 15px;
+    font-weight: bold;
+    color: black;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#show-more-button:hover {
+    background-color: black;
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+.chat-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: white;
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: cursive;
+    padding: 10px 20px;
+    border: 1px solid black;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.chat-button:hover {
+    border: 2px solid white;
+    background-color: black;
+    color: white;
+}
+
+.chat-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 150;
+}
+
+.chatmodal-content {
+    background-color: #fff;
+    font-family: cursive;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.close-chat {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.chat-area {
+    height: 200px;
+    width: 500px;
+    max-width: 500px;
+    overflow-y: scroll;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+#submit-message {
+    background-color: gray;
+    color: black;
+    font-family: cursive;
+    font-weight: bold;
+    border: none;
+    padding: 10px 50px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#submit-message:hover {
+    background-color: black;
+    color: white;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 150;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+  
+
+.modal-content {
+    background-color: #fefefe;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: auto;
+    border: 2px solid black;
+    height: 400px;
+    width: 600px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    font-family: cursive;
+    font-weight: bold;
+    justify-content: space-between;
+}
+
+#modal-shoe-price {
+    font-size: 24px;
+}
+
+.shoe-details-modal {
+    display: flex;
+    float: left;
+}
+
+.shoe-image-modal {
+    height: 350px;
+    width: 300px;
+    margin: 20px;
+    border: 1px solid black;
+}
+
+#addToCartButton {
+    background-color: darkgray;
+    color: black;
+    font-family: cursive;
+    font-weight: bold;
+    padding: 10px 15px;
+    border: none;
+}
+
+#addToCartButton:hover {
+    background-color: black;
+    color: white;
+}
+
+.quantity {
+    padding: 5px 100px;
+    font-weight: bold;
+}
+
+.checkout-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+}
+  
+.checkout-modal-content {
+    background: #fff;
+    font-family: cursive;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 5px;
+    text-align: center;
+}
+  
+.checkout-modal input {
+    width: 100%;
+    margin: 5px 0;
+}
+  
+.checkout-modal button {
+    background-color: darkgray;
+    color: black;
+    font-family: cursive;
+    font-weight: bold;
+    margin: 10px 0;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+}
+  
+.checkout-modal button:hover {
+    background-color: black;
+    color: white;
+}
